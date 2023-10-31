@@ -1,4 +1,4 @@
-package media1;
+package diferença;
 
 import java.io.IOException;
 import java.util.Scanner;

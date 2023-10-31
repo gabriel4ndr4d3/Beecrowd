@@ -1,4 +1,4 @@
-package Salario;
+package salario;
 
 import java.io.IOException;
 import java.util.Locale;
