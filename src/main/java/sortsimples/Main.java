@@ -20,9 +20,9 @@ public class Main {
 
         sorted.sort(Integer::compare);
 
-        System.out.println(sorted.get(0));
-        System.out.println(sorted.get(1));
-        System.out.println(sorted.get(2));
+        for (int i = 0; i < sorted.size(); i++) {
+            System.out.println(sorted.get(i));
+        }
 
         System.out.println();
 
