@@ -26,9 +26,9 @@ public class Main {
 
         System.out.println();
 
-        System.out.println(original.get(0));
-        System.out.println(original.get(1));
-        System.out.println(original.get(2));
+        for (int i = 0; i < original.size(); i++) {
+            System.out.println(original.get(i));
+        }
 
     }
 }
