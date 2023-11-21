@@ -7,40 +7,48 @@ public class Main {
     public static void main(String[] args) throws IOException {
         Scanner teclado = new Scanner(System.in);
 
+        DDD[] ddds = {
+                new DDD(61, "Brasilia"),
+                new DDD(71, "Salvador"),
+                new DDD(11, "Sao Paulo"),
+                new DDD(21, "Rio de Janeiro"),
+                new DDD(32, "Juiz de Fora"),
+                new DDD(19, "Campinas"),
+                new DDD(27, "Vitoria"),
+                new DDD(31, "Belo Horizonte"),
+        };
+
         int code = teclado.nextInt();
 
-        if (code == 61){
-            System.out.println("Brasilia");
-            return;
-        }
-        if (code == 71){
-            System.out.println("Salvador");
-            return;
-        }
-        if (code == 11){
-            System.out.println("Sao Paulo");
-            return;
-        }
-        if (code == 21){
-            System.out.println("Rio de Janeiro");
-            return;
-        }
-        if (code == 32){
-            System.out.println("Juiz de Fora");
-            return;
-        }
-        if (code == 19){
-            System.out.println("Campinas");
-            return;
-        }
-        if (code == 27){
-            System.out.println("Vitoria");
-            return;
-        }
-        if (code == 31){
-            System.out.println("Belo Horizonte");
+        for (int i = 0; i < ddds.length; i++) {
+            DDD ddd = ddds[i];
+
+            if (code == ddd.getDdd()) {
+                System.out.println(ddd.getCidade());
+                return;
+            }
         }
 
         System.out.println("DDD nao cadastrado");
+    }
+}
+
+class DDD {
+
+    private final int ddd;
+    private final String cidade;
+
+    public DDD(int ddd, String cidade) {
+
+        this.ddd = ddd;
+        this.cidade = cidade;
+    }
+
+    public int getDdd() {
+        return ddd;
+    }
+
+    public String getCidade() {
+        return cidade;
     }
 }
