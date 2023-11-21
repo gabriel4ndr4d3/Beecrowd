@@ -11,37 +11,63 @@ public class Main {
         String word2 = t.next();
         String word3 = t.next();
 
+        Animal[] animals = {
+                new Animal("aguia", "vertebrado", "ave", "carnivoro"),
+                new Animal("pomba", "vertebrado", "ave", "onivoro"),
+                new Animal("homem", "vertebrado", "mamifero", "onivoro"),
+                new Animal("vaca", "vertebrado", "mamifero", "herbivoro"),
+                new Animal("pulga", "invertebrado", "inseto", "hematofago"),
+                new Animal("lagarta", "invertebrado", "inseto", "herbivoro"),
+                new Animal("sanguessuga", "invertebrado", "anelideo", "hematofago"),
+                new Animal("minhoca", "invertebrado", "anelideo", "onivoro")
+        };
 
-        if (word1.equals("vertebrado") && word2.equals("ave") && word3.equals("carnivoro")) {
-            System.out.println("aguia");
-            return;
+        for (Animal animal : animals) {
+            if (animal.getTipo1().equals(word1) &&
+                    animal.getTipo2().equals(word2) &&
+                    animal.getTipo3().equals(word3)) {
+
+                System.out.println(animal.getName());
+            }
         }
-        if (word1.equals("vertebrado") && word2.equals("ave") && word3.equals("onivoro")) {
-            System.out.println("pomba");
-            return;
-        }
-        if (word1.equals("vertebrado") && word2.equals("mamifero") && word3.equals("onivoro")) {
-            System.out.println("homem");
-            return;
-        }
-        if (word1.equals("vertebrado") && word2.equals("mamifero") && word3.equals("herbivoro")) {
-            System.out.println("vaca");
-            return;
-        }
-        if (word1.equals("invertebrado") && word2.equals("inseto") && word3.equals("hematofago")) {
-            System.out.println("pulga");
-            return;
-        }
-        if (word1.equals("invertebrado") && word2.equals("inseto") && word3.equals("herbivoro")) {
-            System.out.println("lagarta");
-            return;
-        }
-        if (word1.equals("invertebrado") && word2.equals("anelideo") && word3.equals("hematofago")) {
-            System.out.println("sanguessuga");
-            return;
-        }
-        if (word1.equals("invertebrado") && word2.equals("anelideo") && word3.equals("onivoro")) {
-            System.out.println("minhoca");
-        }
+    }
+}
+
+class Animal {
+
+    private final String tipo1;
+    private final String tipo2;
+    private final String tipo3;
+
+    private final String name;
+
+
+    public Animal(
+            String name,
+            String tipo1,
+            String tipo2,
+            String tipo3
+    ) {
+        this.name = name;
+        this.tipo1 = tipo1;
+        this.tipo2 = tipo2;
+        this.tipo3 = tipo3;
+
+    }
+
+    public String getTipo1() {
+        return tipo1;
+    }
+
+    public String getTipo2() {
+        return tipo2;
+    }
+
+    public String getTipo3() {
+        return tipo3;
+    }
+
+    public String getName() {
+        return name;
     }
 }
