@@ -24,9 +24,7 @@ public class Main {
 
         int monthNumber = teclado.nextInt();
 
-        for (int i = 0; i < months.length; i++) {
-            Month month = months[i];
-
+        for (Month month : months) {
             if (monthNumber == month.getNumber()) {
                 System.out.println(month.getName());
                 return;
