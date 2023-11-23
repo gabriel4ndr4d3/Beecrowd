@@ -7,55 +7,53 @@ public class Main {
     public static void main(String[] args) throws IOException {
         Scanner teclado = new Scanner(System.in);
 
-        int month = teclado.nextInt();
+        Month[] months = {
+                new Month(1, "January"),
+                new Month(2, "February"),
+                new Month(3, "March"),
+                new Month(4, "April"),
+                new Month(5, "May"),
+                new Month(6, "June"),
+                new Month(7, "July"),
+                new Month(8, "August"),
+                new Month(9, "September"),
+                new Month(10, "October"),
+                new Month(11, "November"),
+                new Month(12, "December")
+        };
 
-        if (month == 1) {
-            System.out.println("January");
-            return;
-        }
-        if (month == 2) {
-            System.out.println("February");
-            return;
-        }
-        if (month == 3) {
-            System.out.println("March");
-            return;
-        }
-        if (month == 4) {
-            System.out.println("April");
-            return;
-        }
-        if (month == 5) {
-            System.out.println("May");
-            return;
-        }
-        if (month == 6) {
-            System.out.println("June");
-            return;
-        }
-        if (month == 7) {
-            System.out.println("July");
-            return;
-        }
-        if (month == 8) {
-            System.out.println("August");
-            return;
-        }
-        if (month == 9) {
-            System.out.println("September");
-            return;
-        }
-        if (month == 10) {
-            System.out.println("October");
-            return;
-        }
-        if (month == 11) {
-            System.out.println("November");
-            return;
-        }
-        if (month == 12) {
-            System.out.println("December");
+        int monthNumber = teclado.nextInt();
+
+        for (int i = 0; i < months.length; i++) {
+            Month month = months[i];
+
+            if (monthNumber == month.getNumber()) {
+                System.out.println(month.getName());
+                return;
+            }
+
         }
 
     }
+
+    static class Month {
+
+        private final int number;
+        private final String name;
+
+        public Month(int number, String name) {
+
+            this.number = number;
+            this.name = name;
+        }
+
+        public int getNumber() {
+            return number;
+        }
+
+        public String getName() {
+            return name;
+        }
+    }
+
 }
